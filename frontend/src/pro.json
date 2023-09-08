@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "name": "milk",
+      "category": "cho",
+      "price": 200,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "shocolate 2",
+      "category": "cho",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "name": "shocolate 3",
+      "category": "cho",
+      "price": 300
+    },
+    {
+      "name": "shocolate 4",
+      "category": "cho",
+      "price": 400,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "orange",
+      "category": "juice",
+      "price": 100
+    },
+    {
+      "id": 6,
+      "name": "probary",
+      "category": "juice",
+      "price": 100
+    },
+    {
+      "name": "mango",
+      "category": "juice",
+      "price": 200,
+      "id": 7
+    },
+    {
+      "name": "coctal",
+      "category": "juice",
+      "price": 200,
+      "id": 8
+    },
+    {
+      "name": "after type",
+      "category": "juice",
+      "price": 100,
+      "id": 10
+    },
+    {
+      "name": "testp weam",
+      "category": "juice",
+      "price": 200,
+      "id": 11
+    },
+    {
+      "name": "testp weam",
+      "category": "juice",
+      "price": "200",
+      "id": 12
+    }
+  ]
+}
