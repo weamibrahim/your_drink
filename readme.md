@@ -1,6 +1,6 @@
 # drinks-shop
 <div align="center" margin-top="5px">
-  <img src="https://img.freepik.com/free-photo/top-view-pink-flower-with-drops_1112-450.jpg?w=996&t=st=1692908385~exp=1692908985~hmac=d23cce672841dbf80bf8e7ae4da34b7ae15299bf6dbeef362f0cb7694f6b2ebd" alt="animate" width="200"/><br>
+  <img src="https://img.freepik.com/free-photo/cup-delicious-strawberry-smoothie_23-2148574149.jpg?size=626&ext=jpg&uid=R50739859&ga=GA1.2.1532466403.1676939380&semt=sph" alt="animate" width="200"/><br>
   <a href=#">
    
   </a>
