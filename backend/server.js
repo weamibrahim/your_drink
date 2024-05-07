@@ -12,9 +12,9 @@ const orderRoutes=require("./Router/OrderRoutes")
 require("dotenv").config();
 
 const PORT = process.env.PORT || 7000;
-const mongoURI = "mongodb://127.0.0.1:27017/yourjuice";
 
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+const mongoURI = process.env.MONGOURI;
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,7 +39,7 @@ mongoose.connection.on("connected", () => {
 
 
 app.get("/", (req, res) => {
-  res.send("PlatePalate backend!");
+  res.send("Hello from backend!");
 });
 
 app.listen(PORT, () => {

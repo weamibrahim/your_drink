@@ -22,7 +22,7 @@
             <tbody>
            <tr v-for="(cartItem, index) in cartItems" :key="index" class="text-center">
             <td>{{ index+1 }}</td>
-               <td><img :src="'http://localhost:7000/images/'+ cartItem.productId.image" ></td>
+               <td><img :src="'https://your-drink.onrender.com/images/'+ cartItem.productId.image" ></td>
              <td>{{ cartItem.productId.name }}</td>
           <td>{{ cartItem.productId.price }} LE</td>
           <td>{{ cartItem.quantity }}</td>
@@ -74,7 +74,7 @@ export default {
  const userId = JSON.parse(localStorage.getItem("userData"))._id;
     const getCartItems = () => {
      
-      axios.get(`http://localhost:7000/api/cart/${userId}`)
+      axios.get(`https://your-drink.onrender.com/api/cart/${userId}`)
         .then((res) => {
           cartItems.value = res.data.items;
         })
@@ -94,7 +94,7 @@ export default {
 
 
     // const incrementCartItem = (productId) => {
-    //   axios.put(`http://localhost:7000/api/cart/increment-item/${userId}/${productId}`)
+    //   axios.put(`https://your-drink.onrender.com/api/cart/increment-item/${userId}/${productId}`)
     //     .then((res) => {
     //       // Update the cartItems array with the updated data from the server
     //       cartItems.value = res.data.items;
@@ -113,7 +113,7 @@ const incrementCartItem = (productId) => {
     cartItem.quantity += 1;
 
     // Send a request to update the cart item on the server
-    axios.put(`http://localhost:7000/api/cart/increment-item/${userId}/${productId}`)
+    axios.put(`https://your-drink.onrender.com/api/cart/increment-item/${userId}/${productId}`)
       .then((res) => {
         // Handle the response as needed
         console.log(res);
@@ -135,7 +135,7 @@ const decrementCartItem = (productId) => {
     } 
 
     // Send a request to update the cart item on the server
-    axios.put(`http://localhost:7000/api/cart/decrement-item/${userId}/${productId}`)
+    axios.put(`https://your-drink.onrender.com/api/cart/decrement-item/${userId}/${productId}`)
       .then((res) => {
         console.log(res);
       })
@@ -154,7 +154,7 @@ const removeCartItem = (productId) => {
     cartItems.value.splice(itemIndex, 1);
 
     // Send a request to remove the item from the server
-    axios.put(`http://localhost:7000/api/cart/remove-item/${userId}/${productId}`)
+    axios.put(`https://your-drink.onrender.com/api/cart/remove-item/${userId}/${productId}`)
       .then((res) => {
         // Handle the response as needed
         console.log(res);

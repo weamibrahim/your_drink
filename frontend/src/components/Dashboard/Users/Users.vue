@@ -55,7 +55,7 @@ export default {
     const users = ref([]);
     const searchText = ref("");
     const getallusers = () => {
-      axios.get("http://localhost:7000/api/users/alluser")
+      axios.get("https://your-drink.onrender.com/api/users/alluser")
         .then((res) => {
          // console.log(res.data);
           users.value = res.data;
@@ -63,7 +63,7 @@ export default {
         .catch((err) => console.log(err));
     };
     const deleteUser = (id) => {
-      axios.delete(`http://localhost:7000/api/users/delete/${id}`)
+      axios.delete(`https://your-drink.onrender.com/api/users/delete/${id}`)
         .then((res) => {
           console.log(res.data);
           getallusers();

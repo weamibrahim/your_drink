@@ -2,36 +2,32 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import { createWebHistory, createRouter } from 'vue-router';
-
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
-import HomeAPP from './components/Home.vue'
-import ProductsAPP from './components/Products.vue'
+
+const HomeAPP = () => import('./components/Home.vue');
+const ProductsAPP = () => import('./components/Products.vue');
+const UpdateProfileApp = () => import('./components/UpdateProfile.vue');
+const ProfileApp = () => import('./components/Profile.vue');
+const DashboardApp = () => import('./components/Dashboard/Dashboard.vue');
+const UsersAPP = () => import('./components/Dashboard/Users/Users.vue');
+const UpdateUser = () => import('./components/Dashboard/Users/Update.vue');
+const DetailsAPP = () => import('./components/Dashboard/Users/Details.vue');
+const AllProductApp = () => import('./components/Dashboard/Products/AllProduct.vue');
+const CreateProductApp = () => import('./components/Dashboard/Products/CreatProduct.vue');
+const UpdateProductApp = () => import('./components/Dashboard/Products/UpdateProduct.vue');
+const LoginApp = () => import('./components/Login.vue');
+const SignUpApp = () => import('./components/Signup.vue');
+const DetailsProductApp = () => import('./components/DetailsProduct.vue');
+const CartApp = () => import('./components/Cart.vue');
+const PaymentApp = () => import('./components/payment.vue');
+const NotFoundApp = () => import('./components/NotFound.vue');
 
 
 
-import UpdateProfileApp from './components/UpdateProfile.vue'
-import ProfileApp from './components/Profile.vue'
 
-// dashboard
-import DashboardApp from './components/Dashboard/Dashboard.vue'
 
-import UsersAPP from './components/Dashboard/Users/Users.vue'
-
-import UpdateUser from './components/Dashboard/Users/Update.vue'
-import DetailsAPP from './components/Dashboard/Users/Details.vue'
-
-import AllProductApp from './components/Dashboard/Products/AllProduct.vue'
-import CreateProductApp from './components/Dashboard/Products/CreatProduct.vue'
-import UpdateProductApp from './components/Dashboard/Products/UpdateProduct.vue'
-
-import LoginApp from './components/Login.vue'
-import SignUpApp from './components/Signup.vue'
-import DetailsProductApp from './components/DetailsProduct.vue'
-import CartApp from './components/Cart.vue'
-import PaymentApp from './components/payment.vue'
-import NotFoundApp from './components/NotFound.vue'
 
 
 //const app = createApp(App);

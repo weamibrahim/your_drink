@@ -77,7 +77,7 @@ const router = useRouter();
       try {
         // Send the user data to your Node.js backend
     // Send the user data to your Node.js backend using Axios
-        const response = await axios.post('http://localhost:7000/api/users/register', user.value);
+        const response = await axios.post('https://your-drink.onrender.com/api/users/register', user.value);
 
   console.log(response.data);
         

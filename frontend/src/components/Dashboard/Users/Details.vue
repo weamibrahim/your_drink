@@ -47,7 +47,7 @@ export default {
     const getUserByID = () => {
       const userId = route.params.id;
       
-      axios.get(`http://localhost:7000/api/users/${userId}`)
+      axios.get(`https://your-drink.onrender.com/api/users/${userId}`)
         .then((res) => {
           const responseData = res.data; // Store response data in a different variable
           id.value = responseData.id;

@@ -15,6 +15,7 @@
           <span class="forgot"><a href="#">Forgot Password?</a></span>
           <button @click.prevent="login">Submit</button>
         </div>
+         <p class="mx-5">if you not  have an account? <router-link to="/signup">Sign in</router-link></p>
       </form>
     </div>
     <div class="right">
@@ -60,7 +61,9 @@
                     <path id="uuid-c026fd96-7d81-4b34-bb39-0646c0e08e96-204" d="M465.67391,331.01678c-12.74718,6.63753-26.5046,5.44058-30.72743-2.67249-4.22283-8.11308,2.6878-20.06802,15.44041-26.70621,5.05777-2.72156,10.69376-4.19231,16.43644-4.28916l54.36547-27.44139,10.79681,21.52636-53.36733,28.57487c-3.37375,4.65048-7.81238,8.42516-12.94437,11.00803Z" fill="#a0616a"></path>
                     <path d="M527.48463,97.10598s56-3,68,27c12,30,22,128,22,128l-122,66.37402-21-32.37402,82-64-29-125Z" fill="#3f3d56"></path>
                 </svg></div>
+                
     </div>
+    
   </div>
 </template>
 
@@ -84,7 +87,7 @@ const router = useRouter();
     const login = async () => {
       try {
         // Replace 'your_backend_url' with the actual URL of your authentication API
-        const response = await axios.post('http://localhost:7000/api/users/login', {
+        const response = await axios.post('https://your-drink.onrender.com/api/users/login', {
           email: email.value,
           password: password.value,
         });

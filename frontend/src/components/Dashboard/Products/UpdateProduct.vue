@@ -7,11 +7,6 @@
    <div className='d-flex justify-content-center '>
     <form @submit.prevent="submitForm" enctype="multipart/form-data" >
 
-
-
-
-
-
       <div class="form-group">
     <label for="image" class="form-label text-white">Image:</label>
     <input
@@ -103,7 +98,7 @@ const handleImageChange = (event) => {
 
       
       axios
-        .get(`http://localhost:7000/api/Product/${productId.value}`)
+        .get(`https://your-drink.onrender.com/api/Product/${productId.value}`)
         .then((res) => {
           const { name,category,price,des } = res.data;
           formData.name=name
@@ -127,7 +122,7 @@ const handleImageChange = (event) => {
   }
       // Send the updated data to the server
       axios
-        .put(`http://localhost:7000/api/Product/update/${productId.value}`, form)
+        .put(`https://your-drink.onrender.com/api/Product/update/${productId.value}`, form)
         .then(() => {
           router.push(`/dashboard/allproduct`);
         })

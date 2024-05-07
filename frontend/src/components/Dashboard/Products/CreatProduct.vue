@@ -96,7 +96,7 @@ export default {
 
       // Send the new product data to the server
       axios
-        .post("http://localhost:7000/api/Product/create", form)
+        .post("https://your-drink.onrender.com/api/Product/create", form)
         .then(() => {
           router.push("/dashboard/allproduct"); // Navigate back to the products list after creating
         })
