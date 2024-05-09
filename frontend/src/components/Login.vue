@@ -16,6 +16,7 @@
           <button @click.prevent="login">Submit</button>
         </div>
          <p class="mx-5">if you not  have an account? <router-link to="/signup">Sign in</router-link></p>
+         <p v-if="errorMessage">{{errorMessage}}</p>
       </form>
     </div>
     <div class="right">
@@ -83,6 +84,7 @@ export default {
   setup() {
     const email = ref('');
     const password = ref('');
+    const errorMessage = ref('');
 const router = useRouter();
     const login = async () => {
       try {
@@ -106,7 +108,9 @@ const router = useRouter();
           // Handle authentication failure, e.g., show an error message
         }
       } catch (error) {
-        console.error('Error during login:', error);
+        if (error.response) {
+          errorMessage.value = error.response.data.message;
+        }
         // Handle any errors that occur during the API request
       }
     };
@@ -115,6 +119,7 @@ const router = useRouter();
       email,
       password,
       login,
+      errorMessage,
     };
   },
 };

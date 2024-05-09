@@ -14,7 +14,7 @@
       <div class="card-body">
         <h5 class="card-title text-center">{{product.name}}</h5>
         <p class="card-text text-center">{{product.price}}</p>
-         <p class="card-text text-center">{{product.category}}</p>
+         
       </div>
     </div>
   </div>
