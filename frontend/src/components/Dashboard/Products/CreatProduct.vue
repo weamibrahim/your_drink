@@ -100,7 +100,7 @@ export default {
 
 console.log(form)
       // Send the new product data to the server
-      axios.post("http://localhost:7000/api/Product/create",form,{
+      axios.post("https://your-drink.onrender.com/api/Product/create",form,{
            headers: {
           
             Authorization: `Bearer ${token}`,

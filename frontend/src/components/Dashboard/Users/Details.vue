@@ -48,7 +48,7 @@ export default {
     const getUserByID = () => {
       const userId = route.params.id;
       
-      axios.get(`http://localhost:7000/api/users/${userId}`,{
+      axios.get(`https://your-drink.onrender.com/api/users/${userId}`,{
          headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

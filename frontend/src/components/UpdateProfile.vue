@@ -97,7 +97,7 @@ export default {
     const updateProfile = async () => {
       try {
         // Make an HTTP request to update the user data on the server
-        const response = await fetch(`http://localhost:7000/api/users/update/${data._id}`, {
+        const response = await fetch(`https://your-drink.onrender.com/api/users/update/${data._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

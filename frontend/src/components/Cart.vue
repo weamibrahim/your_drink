@@ -23,7 +23,7 @@
             <tbody>
            <tr v-for="(cartItem, index) in cartItems" :key="index" class="text-center">
             <td>{{ index+1 }}</td>
-               <td><img :src="'http://localhost:7000/images/'+ cartItem.productId.image" ></td>
+               <td><img :src="'https://your-drink.onrender.com/images/'+ cartItem.productId.image" ></td>
              <td>{{ cartItem.productId.name }}</td>
           <td>{{ cartItem.productId.price }} LE</td>
           <td>{{ cartItem.quantity }}</td>
@@ -78,7 +78,7 @@ export default {
 
     const getCartItems = async () => {
       try {
-        const response = await fetch(`http://localhost:7000/api/cart/${userId}`, {
+        const response = await fetch(`https://your-drink.onrender.com/api/cart/${userId}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export default {
 
       if (cartItem) {
         try {
-          const response = await fetch(`http://localhost:7000/api/cart/increment-item/${userId}/${productId}`, {
+          const response = await fetch(`https://your-drink.onrender.com/api/cart/increment-item/${userId}/${productId}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -134,7 +134,7 @@ export default {
 
       if (cartItem) {
         try {
-          const response = await fetch(`http://localhost:7000/api/cart/decrement-item/${userId}/${productId}`, {
+          const response = await fetch(`https://your-drink.onrender.com/api/cart/decrement-item/${userId}/${productId}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -160,7 +160,7 @@ export default {
 
       if (itemIndex !== -1) {
         try {
-          const response = await fetch(`http://localhost:7000/api/cart/remove-item/${userId}/${productId}`, {
+          const response = await fetch(`https://your-drink.onrender.com/api/cart/remove-item/${userId}/${productId}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

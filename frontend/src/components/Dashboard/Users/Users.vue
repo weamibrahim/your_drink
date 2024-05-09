@@ -57,7 +57,7 @@ export default {
     const users = ref([]);
     const searchText = ref("");
     const getallusers = () => {
-      axios.get("http://localhost:7000/api/users/alluser",{
+      axios.get("https://your-drink.onrender.com/api/users/alluser",{
          headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ export default {
         .catch((err) => console.log(err));
     };
     const deleteUser = (id) => {
-      axios.delete(`http://localhost:7000/api/users/delete/${id}`,{
+      axios.delete(`https://your-drink.onrender.com/api/users/delete/${id}`,{
          headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

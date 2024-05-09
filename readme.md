@@ -83,7 +83,7 @@ you can see it [here](https://drive.google.com/file/d/1reTpvqKqA31hlSGE4vU9CwBTv
     npm run serve
   </pre>
 
-<h4>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h4><br>
+<h4>Open your web browser and navigate to `https://your-drink.onrender.com` to access the Threads & Beads website.</h4><br>
 
 
 ## **TECHNOLOGIES**

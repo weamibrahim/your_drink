@@ -69,7 +69,7 @@ export default {
 
     const registerUser = async () => {
       try {
-        const response = await axios.post('http://localhost:7000/api/users/register', user.value);
+        const response = await axios.post('https://your-drink.onrender.com/api/users/register', user.value);
         const data = response.data;
 
        

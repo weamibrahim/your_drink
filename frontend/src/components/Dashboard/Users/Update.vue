@@ -101,7 +101,7 @@ export default {
          userId.value = route.params.id;
       console.log(userId.value)
       axios
-        .get(`http://localhost:7000/api/users/${userId.value}`,{
+        .get(`https://your-drink.onrender.com/api/users/${userId.value}`,{
            headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -122,7 +122,7 @@ export default {
     const submitForm = () => {
       // Send the updated data to the server
       axios
-        .put(`http://localhost:7000/api/users/update/${userId.value}`, {
+        .put(`https://your-drink.onrender.com/api/users/update/${userId.value}`, {
           user_name: formData.name,
           email: formData.email,
           address: formData.address,
