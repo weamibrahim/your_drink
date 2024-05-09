@@ -1,18 +1,13 @@
 <template>
-  
-  <div class="d-flex justify-content-center" >
+  <div class="d-flex justify-content-center">
     <form @submit.prevent="registerUser" class="form my-5">
-     
-     <p class="title">Register</p>
+      <p class="title">Register</p>
       <p class="message">Signup now and get full access to our app.</p>
-      
-        <label>
-          <input v-model="user.user_name" class="input" type="text" placeholder="" required>
-          <span> Name</span>
-        </label>
 
-       
-      
+      <label>
+        <input v-model="user.user_name" class="input" type="text" placeholder="" required>
+        <span>Name</span>
+      </label>
 
       <label>
         <input v-model="user.email" class="input" type="email" placeholder="" required>
@@ -25,30 +20,27 @@
       </label>
 
       <label>
-          <select v-model="user.gender"  class="input" required>
-              <option value="">Select Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-         
-            </select>
-      </label>
-      <label>
-        <select v-model="user.role" class="input" required>
-              <option value="">Select Role</option>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
+        <select v-model="user.gender" class="input" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
         </select>
       </label>
+
+      
+
       <label>
         <input v-model="user.mobile" class="input" type="text" placeholder="" required>
         <span>Mobile</span>
       </label>
+
       <label>
         <input v-model="user.address" class="input" type="text" placeholder="" required>
         <span>Address</span>
       </label>
 
       <button type="submit" class="submit">Submit</button>
+      <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
       <p class="signin">Already have an account? <router-link to="/login">Sign in</router-link></p>
     </form>
   </div>
@@ -58,45 +50,45 @@
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
 import axios from 'axios';
+
 export default {
-  name:'SignupApp',
+  name: 'SignupApp',
   setup() {
     const user = ref({
       user_name: '',
       email: '',
       password: '',
-      gender:'',
-      role:'',
-      mobile:'',
-      address:''
-      // Add other user properties here (last_name, email, password, etc.)
+      gender: '',
+     
+      mobile: '',
+      address: ''
     });
- 
-const router = useRouter();
+
+    const router = useRouter();
+    const errorMessage = ref('');
+
     const registerUser = async () => {
       try {
-        // Send the user data to your Node.js backend
-    // Send the user data to your Node.js backend using Axios
-        const response = await axios.post('https://your-drink.onrender.com/api/users/register', user.value);
+        const response = await axios.post('http://localhost:7000/api/users/register', user.value);
+        const data = response.data;
 
-  console.log(response.data);
-        
-          const data = response.data;
-          localStorage.setItem('userData', JSON.stringify(data.user));
-          localStorage.setItem('accessToken', data.accessToken);
+       
 
-          // Handle successful registration (e.g., show a success message)
-          console.log(data.message);
-           router.push('/home');
-        
+        console.log(data.message);
+        router.push('/login');
       } catch (error) {
-        // Handle network errors or other exceptions
+        if (error.response && error.response.status === 409) {
+          errorMessage.value = 'User with this email already exists. Please choose a different email.';
+        } else {
+          errorMessage.value = 'An error occurred while registering. Please try again later.';
+        }
         console.error('Error:', error);
       }
     };
 
     return {
       user,
+      errorMessage,
       registerUser,
     };
   },

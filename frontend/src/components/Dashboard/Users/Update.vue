@@ -81,6 +81,7 @@ export default {
    SidebarApp
   },
   setup() {
+    const token = localStorage.getItem("accessToken");
     const router = useRouter();
      const route = useRoute(); 
     const userId = ref(''); // Define userId as a ref
@@ -100,7 +101,12 @@ export default {
          userId.value = route.params.id;
       console.log(userId.value)
       axios
-        .get(`https://your-drink.onrender.com/api/users/${userId.value}`)
+        .get(`http://localhost:7000/api/users/${userId.value}`,{
+           headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((res) => {
           const {user_name,email,address,mobile,gender,role} = res.data;
           formData.name = user_name;
@@ -116,14 +122,20 @@ export default {
     const submitForm = () => {
       // Send the updated data to the server
       axios
-        .put(`https://your-drink.onrender.com/api/users/update/${userId.value}`, {
+        .put(`http://localhost:7000/api/users/update/${userId.value}`, {
           user_name: formData.name,
           email: formData.email,
           address: formData.address,
           mobile: formData.mobile,
           gender: formData.gender,
           role: formData.role
-        })
+        },{
+           headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+        )
         .then(() => {
           router.push(`/dashboard/users`);
         })

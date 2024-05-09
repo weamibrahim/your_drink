@@ -32,6 +32,7 @@ export default {
    SidebarApp
   },
   setup() {
+    const token = localStorage.getItem("accessToken");
     const id = ref('');
     const name = ref('');
     const email = ref('');
@@ -47,7 +48,12 @@ export default {
     const getUserByID = () => {
       const userId = route.params.id;
       
-      axios.get(`https://your-drink.onrender.com/api/users/${userId}`)
+      axios.get(`http://localhost:7000/api/users/${userId}`,{
+         headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+      })
         .then((res) => {
           const responseData = res.data; // Store response data in a different variable
           id.value = responseData.id;

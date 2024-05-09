@@ -72,19 +72,22 @@ export default {
    SidebarAPP
   },
   setup() {
+    const token =localStorage.getItem('accessToken')
     const router = useRouter();
     const formData = reactive({
      name:"",
      category:"",
      price:"",
      des:"",
-    image: null, // Add an image property to store the selected image
+    image:null, // Add an image property to store the selected image
     });
 
     const handleImageChange = (event) => {
       // Update the formData with the selected image file
       formData.image = event.target.files[0];
+      console.log(formData.image)
     };
+
 
     const submitForm = () => {
         const form = new FormData();
@@ -94,14 +97,26 @@ export default {
       form.append("des", formData.des);
       form.append("image", formData.image); // Append the image file
 
+
+console.log(form)
       // Send the new product data to the server
-      axios
-        .post("https://your-drink.onrender.com/api/Product/create", form)
+      axios.post("http://localhost:7000/api/Product/create",form,{
+           headers: {
+          
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then(() => {
+         
           router.push("/dashboard/allproduct"); // Navigate back to the products list after creating
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+           console.log("form",form)
+          
+          console.error(err)});
     };
+    console.log(formData)
+
 
     return {
       formData,

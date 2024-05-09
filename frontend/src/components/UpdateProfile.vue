@@ -29,16 +29,7 @@
             </div>
           </div>
 
-          <div class="row mb-3">
-            <div class="col-sm-2">role</div>
-            <div class="col-sm-10 text-secondary">
-              <select v-model="userData.role" class="form-control" required>
-                <option value="">Select Role</option>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="row mb-3">
             <div class="col-sm-2">gender</div>
             <div class="col-sm-10 text-secondary">
@@ -91,12 +82,13 @@ export default {
   name: "UpdateProfileApp",
   setup() {
     const data = JSON.parse(localStorage.getItem("userData"));
+    const token =localStorage.getItem("accessToken")
     const userData = ref(data || {
       user_name: "",
       email: "",
       password: "",
       gender: "",
-      role: "",
+     
       mobile: "",
       address: "",
     });
@@ -105,10 +97,11 @@ export default {
     const updateProfile = async () => {
       try {
         // Make an HTTP request to update the user data on the server
-        const response = await fetch(`https://your-drink.onrender.com/api/users/update/${data._id}`, {
+        const response = await fetch(`http://localhost:7000/api/users/update/${data._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(userData.value),
         });

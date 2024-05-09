@@ -52,10 +52,16 @@ export default {
   },
 
   setup() {
+    const token = localStorage.getItem("accessToken");
     const users = ref([]);
     const searchText = ref("");
     const getallusers = () => {
-      axios.get("https://your-drink.onrender.com/api/users/alluser")
+      axios.get("http://localhost:7000/api/users/alluser",{
+         headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+      })
         .then((res) => {
          // console.log(res.data);
           users.value = res.data;
@@ -63,7 +69,12 @@ export default {
         .catch((err) => console.log(err));
     };
     const deleteUser = (id) => {
-      axios.delete(`https://your-drink.onrender.com/api/users/delete/${id}`)
+      axios.delete(`http://localhost:7000/api/users/delete/${id}`,{
+         headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+      })
         .then((res) => {
           console.log(res.data);
           getallusers();

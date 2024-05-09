@@ -73,10 +73,11 @@ export default {
    SidebarAPP
   },
   setup() {
+      const token =localStorage.getItem('accessToken')
     const router = useRouter();
      const route = useRoute(); 
     const productId = ref(''); // Define productId as a ref
- const selectedImage = ref(null);
+
     const formData = reactive({
       name:"",
      category:"",
@@ -87,7 +88,7 @@ export default {
 
 const handleImageChange = (event) => {
   const file = event.target.files[0];
-  selectedImage.value = file;
+
   formData.image = file
 };
 
@@ -98,7 +99,7 @@ const handleImageChange = (event) => {
 
       
       axios
-        .get(`https://your-drink.onrender.com/api/Product/${productId.value}`)
+        .get(`http://localhost:7000/api/Product/${productId.value}`)
         .then((res) => {
           const { name,category,price,des } = res.data;
           formData.name=name
@@ -116,13 +117,19 @@ const handleImageChange = (event) => {
       form.append("category", formData.category);
       form.append("price", formData.price);
       form.append("des", formData.des);
-      form.append("image", formData.image); 
-  if (selectedImage.value) {
-    form.append("image", selectedImage.value);
-  }
+    form.append("image", formData.image);
+  // if (.value) {
+  //   form.append("image", selectedImage.value);
+  // }
+  
       // Send the updated data to the server
       axios
-        .put(`https://your-drink.onrender.com/api/Product/update/${productId.value}`, form)
+        .put(`http://localhost:7000/api/Product/update/${productId.value}`, form,{
+           headers: {
+           
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then(() => {
           router.push(`/dashboard/allproduct`);
         })

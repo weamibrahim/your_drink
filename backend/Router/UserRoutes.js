@@ -3,6 +3,8 @@ const { Router } = require("express");
 
 const authController = require("../controller/AuthController");
 const userController = require("../controller/UserController");
+const { verifyToken } = require("../middleware/authToken"); 
+const {authorization  } = require("../middleware/authorzation"); 
 const express = require("express");
 const router = express.Router();
 
@@ -10,14 +12,14 @@ const router = express.Router();
 
 
 
-router.get('/alluser', userController.getAllUsers);
+router.get('/alluser',verifyToken,authorization, userController.getAllUsers);
 
-router.get('/:id', userController.getUserById);
+router.get('/:id',verifyToken,authorization, userController.getUserById);
 
-router.delete('/delete/:id', userController.deleteUserById);
+router.delete('/delete/:id',verifyToken,authorization, userController.deleteUserById);
 
 
-router.put('/update/:id',userController.updateUserById);
+router.put('/update/:id',verifyToken, userController.updateUserById);
 
 
 // authRoutes

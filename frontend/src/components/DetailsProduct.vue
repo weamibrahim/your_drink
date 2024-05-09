@@ -2,7 +2,7 @@
    <div className="container my-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
       <div className="row">
         <div className="col-md-6 mb-4">
-          <img :src="'https://your-drink.onrender.com/images/'+ productData.image"  alt="flower.name" className="img-fluid rounded-circle" />
+          <img :src="'http://localhost:7000/images/'+ productData.image"  alt="flower.name" className="img-fluid rounded-circle" />
         </div>
         <div className="col-md-6">
          <p  class="text-center fs-1  ">{{productData.name}}</p>
@@ -37,14 +37,14 @@ export default {
     const price = ref('');
     const description =ref('');
     const image = ref('');
-
+ const token = localStorage.getItem('accessToken')
     const route = useRoute();
     const router = useRouter();
 
     const getproductByID = () => {
       const productId = route.params.id;
       
-      axios.get(`https://your-drink.onrender.com/api/Product/${productId}`)
+      axios.get(`http://localhost:7000/api/Product/${productId}`)
         .then((res) => {
           const responseData = res.data; // Store response data in a different variable
           id.value = responseData.id;
@@ -83,7 +83,12 @@ const user_id = JSON.parse(localStorage.getItem('userData'))._id
         quantity: 1, // You can change the quantity as needed
       };
 
-      axios.post(`https://your-drink.onrender.com/api/cart/add-item`, requestData)
+      axios.post(`http://localhost:7000/api/cart/add-item`, requestData,{
+         headers: {
+            "Content-Type": "application/json",
+             Authorization: `Bearer ${token}`,
+          },
+      })
         .then((res) => {
           // Handle a successful response, e.g., show a success message
           //alert("Item added to cart successfully!");

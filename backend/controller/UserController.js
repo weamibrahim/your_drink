@@ -5,25 +5,25 @@ userController.updateUserById = async (req, res, next) => {
     try {
       const { id } = req.params;
      
-      const { user_name, email, password,   gender, role, mobile, address } = req.body;
+      const { user_name, email, password, role,  gender,  mobile, address } = req.body;
 
-      const user = await User.findById(id);
+      const user = await User.findByIdAndUpdate(id, {user_name, email, password, role,  gender,  mobile, address}, { new: true });
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
       }
   
-      user.user_name = user_name !== undefined ? user_name : user.name;
-      user.email = email !== undefined ? email : user.email;
-      user.password = password !== undefined ? password : user.password;
+  //     user.user_name = user_name !== undefined ? user_name : user.name;
+  //     user.email = email !== undefined ? email : user.email;
+  //     user.password = password !== undefined ? password : user.password;
      
-   user.gender = gender !== undefined ? gender : user.gender;
-   user.role = role !== undefined ? role : user.role;
-   user.mobile = mobile !== undefined ? mobile : user.mobile;
-   user.address = address !== undefined ? address : user.address;
+  //  user.gender = gender !== undefined ? gender : user.gender;
+  //  //user.role = role !== undefined ? role : user.role;
+  //  user.mobile = mobile !== undefined ? mobile : user.mobile;
+  //  user.address = address !== undefined ? address : user.address;
   
-      const updatedUser = await user.save();
-  console.log(updatedUser);
-      res.status(200).json({ message: 'User updated successfully', user: updatedUser });
+     // const updatedUser = await user.save();
+  console.log("usrafterupdatte",user);
+      res.status(200).json({ message: 'User updated successfully', user })
     } catch (err) {
       console.log(err);
       next(err);

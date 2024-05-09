@@ -26,7 +26,7 @@
         <tr v-for="(product,index) in filteredproducts" :key="product.id">
           
           <th scope="row">{{ index+1}}</th>
-       <td><img v-if="product.image" :src="'https://your-drink.onrender.com/images/'+product.image" alt="" ></td>
+       <td><img v-if="product.image" :src="'http://localhost:7000/images/'+product.image" alt="" ></td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
           <td>{{ product.category }}</td>
@@ -54,10 +54,11 @@ export default {
   },
 
   setup() {
+    const token = localStorage.getItem('accessToken')
     const products = ref([]);
     const searchText = ref("");
     const getallproducts = () => {
-      axios.get("https://your-drink.onrender.com/api/Product/Products")
+      axios.get("http://localhost:7000/api/Product/Products")
         .then((res) => {
           console.log(res.data);
           products.value = res.data;
@@ -67,7 +68,12 @@ export default {
         .catch((err) => console.log(err));
     };
     const deleteproduct = (id) => {
-      axios.delete(`https://your-drink.onrender.com/api/Product/delete/${id}`)
+      axios.delete(`http://localhost:7000/api/Product/delete/${id}`,{
+         headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+      })
         .then((res) => {
           console.log(res.data);
           getallproducts();

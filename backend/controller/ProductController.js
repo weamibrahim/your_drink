@@ -24,8 +24,9 @@ exports.createProduct = [
   function(req, res) {
     const { name, des, price ,category} = req.body;
     console.log(req.body)
-    const image = req.file; // This will contain the uploaded image data
-//console.log(image)
+    const image = req.file;
+     // This will contain the uploaded image data
+console.log(image)
     if (!(name && des && price && image && category) ) {
       return res.status(400).json({ message: "Please provide all required fields" });
     }

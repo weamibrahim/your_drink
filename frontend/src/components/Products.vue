@@ -9,7 +9,7 @@
 <div  class="row row-cols-1 row-cols-md-3 g-4 my-3" >
   <div class="col" v-for="product in filteredProducts" :key="product.id">
     <div class="card border-0">
-    <router-link :to="`product/${product._id}`">  <img :src="'https://your-drink.onrender.com/images/'+product.image" alt="...">
+    <router-link :to="`product/${product._id}`">  <img :src="'http://localhost:7000/images/'+product.image" alt="...">
     </router-link>
       <div class="card-body">
         <h5 class="card-title text-center">{{product.name}}</h5>
@@ -38,7 +38,7 @@ export default {
   const products = ref([])
   const searchText = ref("");
   const getallproducts = () => {
-      axios.get("https://your-drink.onrender.com/api/Product/Products")
+      axios.get("http://localhost:7000/api/Product/Products")
         .then((res) => {
          // console.log(res.data);
           products.value = res.data;

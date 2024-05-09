@@ -10,7 +10,7 @@ const authController = {};
 
 authController.register = async (req, res, next) => {
   try {
-    const { user_name, email, password, gender, mobile, address, role} = req.body;
+    const { user_name, email, password,role, gender, mobile, address} = req.body;
     const user = req.body
 
     
@@ -45,9 +45,9 @@ authController.register = async (req, res, next) => {
 
     const savedUser = await newUser.save();
 
-    const accessToken = jwt.sign({ userId: savedUser._id },  accessTokenSecret);
+   
 
-    res.status(201).json({ message: 'User created successfully', accessToken ,user: savedUser});
+    res.status(201).json({ message: 'User created successfully',user: savedUser});
   } catch (err) {
     console.error('Error hashing password:', err);
     next(err);
