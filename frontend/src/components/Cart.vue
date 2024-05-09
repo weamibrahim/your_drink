@@ -1,6 +1,7 @@
 <template>
    <div className="container-fluid">
 
+<div class="table-responsive" >
       <table class="table table-striped">
 
         <thead>
@@ -56,6 +57,7 @@
             </tbody>
         
       </table>
+</div>
       <div className="row d-flex justify-content-center" >
         <p className="text-center">Total Price: {{ calculateTotalPrice()}} LE</p>
         <button className="btn btn-info my-5  checkout"  > <router-link :to='"/payment"' class="text-decoration-none text-white">Checkout</router-link></button>

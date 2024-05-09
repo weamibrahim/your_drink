@@ -104,4 +104,12 @@ export default {
   height: 100vh; /* Ensure full viewport height */
   position: relative; /* Needed for overlay positioning */
 }
+.card{
+  max-width: 500px;
+}
+@media  (max-width: 900px) {
+  .card{
+    max-width: 200px;
+  }
+}
 </style>

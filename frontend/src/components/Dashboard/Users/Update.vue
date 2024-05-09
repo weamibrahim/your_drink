@@ -169,10 +169,20 @@ export default {
   position: relative; /* Needed for overlay positioning */
 }
 form{
-  width: 900px;
+  max-width: 600px;
+  margin-top: 50px;
 }
 input,select{
-  width: 800px
+  width: 400px !important
 }
+@media (max-width: 900px) {
+  input,select{
+    width: 200px !important;
+  }
+}
+
+
+
+
 
 </style>

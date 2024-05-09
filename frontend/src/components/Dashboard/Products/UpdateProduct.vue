@@ -164,12 +164,17 @@ const handleImageChange = (event) => {
   position: relative; /* Needed for overlay positioning */
 }
 form{
-  max-width: 900px;
+  max-width: 600px;
   margin-top: 50px;
+}
+@media (max-width: 900px) {
+  input{
+    width: 200px !important;
+  }
 }
 
 
 input{
-  width: 800px
+  width: 400px
 }
 </style>

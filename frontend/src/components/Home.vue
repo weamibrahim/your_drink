@@ -55,7 +55,7 @@
                         <div class="col-md-6 pt-5 pb-lg-5">
                             <div class="text bg-white p-4 p-lg-5 my-lg-5" >
                                 <h6 class="text-warning text-uppercase" s>About Us</h6>
-                                <h1 class="mb-3">We Provide Best flower  In Your Budget</h1>
+                                <h1 class="mb-3">We Provide Best Drink  In Your Budget</h1>
                                 <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
                                 <div class="row mb-4">
                                     <div class="col-6">

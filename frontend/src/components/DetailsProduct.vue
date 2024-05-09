@@ -2,7 +2,7 @@
    <div className="container my-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
       <div className="row">
         <div className="col-md-6 mb-4">
-          <img :src="'http://localhost:7000/images/'+ productData.image"  alt="flower.name" className="img-fluid rounded-circle" />
+          <img :src="'http://localhost:7000/images/'+ productData.image"  alt="flower.name" className="img-fluid rounded-4" />
         </div>
         <div className="col-md-6">
          <p  class="text-center fs-1  ">{{productData.name}}</p>

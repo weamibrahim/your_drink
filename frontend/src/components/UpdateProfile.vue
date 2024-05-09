@@ -193,7 +193,10 @@ p {
   border-top: 1px solid #dde1e7;
 }
 
-.btn {
-  background-color: #ffa06c;
+.btn{
+background-color: #ffa06c;
+}
+.btn:hover{
+background-color: #e0dddc;
 }
 </style>

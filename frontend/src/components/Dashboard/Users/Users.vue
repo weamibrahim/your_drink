@@ -1,5 +1,5 @@
 <template>
-   <div class="d-flex justify-content-center">
+   <div class="d-flex justify-content-between">
     <SidebarApp />
     <div class="container-fluid bg  ">
    
@@ -8,8 +8,8 @@
       <input type="text" v-model="searchText" class="form-control" placeholder="Search by Name or email or address">
       
     </div>
-                                              
-    <table class="table">
+      <div class="table-responsive">                                        
+    <table class="table ">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -36,6 +36,7 @@
         </tr>
       </tbody>
     </table>
+      </div>
   </div>
    </div>
 </template>
@@ -119,9 +120,14 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh; /* Ensure full viewport height */
-  position: relative; /* Needed for overlay positioning */
+  position: relative; 
+  ;/* Needed for overlay positioning */
 }
 input{
   width: 300px;
 }
+.table{
+  max-width: 1000px;
+}
+
 </style>

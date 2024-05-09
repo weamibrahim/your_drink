@@ -59,7 +59,7 @@
         <div class="card_count d-flex justify-content-center">
             
           
-            <button class="btn btn-primary p-2 border-0"><router-link class="nav-link  text-dark fs-3"  aria-current="page" to="/update">update</router-link></button>
+            <button class="btn  p-2 border-0"><router-link class="nav-link  text-dark fs-3"  aria-current="page" to="/update">update</router-link></button>
         </div>
     </div>
       
@@ -157,6 +157,9 @@ p{
 
 .btn{
 background-color: #ffa06c;
+}
+.btn:hover{
+background-color: #e0dddc;
 }
 
 </style>

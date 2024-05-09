@@ -8,6 +8,7 @@
     
     </div>
     <button class="btn btn-success my-2" >  <router-link class="btn"  to="createproduct">create </router-link> </button>
+     <div class="table-responsive">  
     <table class="table  ">
       <thead>
         <tr>
@@ -39,6 +40,7 @@
       </tbody>
     </table>
     </div>
+     </div>
   </div>
 </template>
 
@@ -116,8 +118,11 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh; /* Ensure full viewport height */
-  position: relative; /* Needed for overlay positioning */
+
+  position: relative; 
+  padding-bottom:0px !important;
+
+  /* Needed for overlay positioning */
 }
 input{
   width: 300px;
