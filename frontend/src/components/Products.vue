@@ -1,6 +1,9 @@
 <template>
 <div class="container">
+
   <div class="my-5 d-flex justify-content-center">
+
+
       <input type="text" v-model="searchText" class="form-control " placeholder="Search by  Name or category or price ">
   
   
