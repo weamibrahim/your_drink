@@ -7,21 +7,21 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2 mb-lg-0 ">
+      <ul class="navbar-nav mb-2 mb-lg-0 " >
         <li class="nav-item"  >
-          <router-link class="nav-link mx-3 fs-3" aria-current="page" to="/dashboard" v-if="userRole=='admin'">Dashboard</router-link>
+          <router-link class="nav-link fs-3" aria-current="page" to="/dashboard" v-if="userRole=='admin'"><i class="fa-solid fa-table-columns mx-3 fs-3"></i>Dashboard</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link  fs-3" aria-current="page" to="/home"><i class="fa-solid fa-house mx-3 fs-3 "></i>Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link  fs-3" aria-current="page" to="/profile"><i class="fa-solid fa-user mx-3 fs-3 "></i>Profile</router-link>
+          <router-link class="nav-link  fs-3" aria-current="page" to="/profile" v-if="isLoggedIn"><i class="fa-solid fa-user mx-3 fs-3 " ></i>Profile</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link  fs-3" aria-current="page" to="/products"><i class="fa-solid fa-wine-glass mx-3 fs-3"></i>Products</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link  fs-3 " aria-current="page" to="/cart">
+          <router-link class="nav-link  fs-3 " aria-current="page" to="/cart" v-if="isLoggedIn">
             <i class="fa-solid fa-basket-shopping fs-3 mx-3 "></i>cart
           </router-link>
         </li>
@@ -81,7 +81,10 @@ nav {
   background-color: #ecc29adc;
 }
 
-li:hover {
+.navbar-nav{
+  font-family: "Sofia", sans-serif !important;
+}
+.navbar-nav:hover {
   color: #ecc29adc !important;
 }
 

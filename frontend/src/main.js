@@ -87,6 +87,7 @@ const router = createRouter({
                
                  if (to.path.startsWith('/dashboard') && !isAdmin) {
                    next('/unauthorized'); // Redirect to an "Unauthorized" page
+                   
                  } else {
                    next(); // Allow access to the route
                  }
