@@ -15,7 +15,7 @@
           <span class="forgot"><a href="#">Forgot Password?</a></span>
           <button @click.prevent="login">Submit</button>
         </div>
-         <p class="mx-5">if you not  have an account? <router-link to="/signup">Sign in</router-link></p>
+         <p class="mx-5">if you dont  have an account? <router-link to="/signup">Sign up</router-link></p>
          <p v-if="errorMessage">{{errorMessage}}</p>
       </form>
     </div>

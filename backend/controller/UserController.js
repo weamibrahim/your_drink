@@ -12,16 +12,7 @@ userController.updateUserById = async (req, res, next) => {
         return res.status(404).json({ message: 'User not found' });
       }
   
-  //     user.user_name = user_name !== undefined ? user_name : user.name;
-  //     user.email = email !== undefined ? email : user.email;
-  //     user.password = password !== undefined ? password : user.password;
-     
-  //  user.gender = gender !== undefined ? gender : user.gender;
-  //  //user.role = role !== undefined ? role : user.role;
-  //  user.mobile = mobile !== undefined ? mobile : user.mobile;
-  //  user.address = address !== undefined ? address : user.address;
-  
-     // const updatedUser = await user.save();
+
   console.log("usrafterupdatte",user);
       res.status(200).json({ message: 'User updated successfully', user })
     } catch (err) {
