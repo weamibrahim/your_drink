@@ -19,9 +19,12 @@ const mongoURI = process.env.MONGOURI;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
+app.use(cors({
+  origin: 'https://your-drink.vercel.app', // Replace with your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Adjust methods as needed
+  allowedHeaders: ['Content-Type', 'Authorization'], // Adjust headers as needed
+}));
 
-// important for connect front with back should come before routes
-app.use(cors()); // Enable CORS
 
 
 
