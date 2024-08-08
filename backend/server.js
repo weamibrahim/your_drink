@@ -20,9 +20,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
 app.use(cors({
-  origin: 'https://your-drink.vercel.app', // Replace with your frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Adjust methods as needed
-  allowedHeaders: ['Content-Type', 'Authorization'], // Adjust headers as needed
+  origin: 'https://your-drink.vercel.app/',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 
 
