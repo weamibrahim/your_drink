@@ -33,7 +33,7 @@
           <router-link class="nav-link  fs-3" aria-current="page" to="/signup">Signup</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link  fs-3" aria-current="page"  @click="logout" v-if="isLoggedIn"><i class="fa-solid fa-right-from-bracket mx-3 fs-3 "></i></router-link>
+          <router-link class="nav-link  fs-3" aria-current="page"  @click="logout"  to="/login" v-if="isLoggedIn"><i class="fa-solid fa-right-from-bracket mx-3 fs-3 "></i></router-link>
         </li>
       </ul>
     </div>
@@ -41,14 +41,14 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref, onMounted ,inject} from "vue";
 import { useRouter } from "vue-router";
 
 export default {
   name: "NavbarApp",
   setup() {
     const router = useRouter();
-    const isLoggedIn = ref(false); // Initialize as false
+       const isLoggedIn = inject('isLoggedIn');
  const userRole = ref(""); 
 
     // Check if the user is logged in when the component is mounted

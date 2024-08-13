@@ -13,7 +13,7 @@
 import NavbarApp from "./components/Navbar.vue";
 import FooterApp from "./components/Footer.vue";
 import LoadingApp from "./components/Loading.vue";
-import { onMounted, ref } from "vue";
+import { onMounted, ref ,provide} from "vue";
 
 export default {
   name: "App",
@@ -24,6 +24,8 @@ export default {
     LoadingApp,
   },
   setup() {
+      const isLoggedIn = ref(false);
+      provide('isLoggedIn', isLoggedIn);
     const loading = ref(true);
     const loadingImage = () => {
       setTimeout(() => {

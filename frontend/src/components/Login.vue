@@ -76,12 +76,13 @@
 
 
 <script>
-import { ref } from 'vue';
+import { ref ,inject} from 'vue';
 import axios from 'axios'; // Import axios
 import { useRouter } from 'vue-router';
 export default {
   name: 'LoginApp',
   setup() {
+    const isLoggedIn =inject('isLoggedIn');
     const email = ref('');
     const password = ref('');
     const errorMessage = ref('');
@@ -101,6 +102,7 @@ const router = useRouter();
           localStorage.setItem('accessToken', data.accessToken);
           console.log('Authentication successful');
           router.push('/home');
+          isLoggedIn.value = true;
 
           // Redirect to another page or perform other actions upon successful login
         } else {
@@ -120,6 +122,7 @@ const router = useRouter();
       password,
       login,
       errorMessage,
+      isLoggedIn
     };
   },
 };
