@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 " >
         <li class="nav-item"  >
-          <router-link class="nav-link fs-3" aria-current="page" to="/dashboard" v-if="userRole=='admin'"><i class="fa-solid fa-table-columns mx-3 fs-3"></i>Dashboard</router-link>
+          <router-link class="nav-link fs-3" aria-current="page" to="/dashboard" v-if="userRole=='admin'&&isLoggedIn"><i class="fa-solid fa-table-columns mx-3 fs-3"></i>Dashboard</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link  fs-3" aria-current="page" to="/home"><i class="fa-solid fa-house mx-3 fs-3 "></i>Home</router-link>
@@ -33,7 +33,7 @@
           <router-link class="nav-link  fs-3" aria-current="page" to="/signup">Signup</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link  fs-3" aria-current="page" to="/signup" @click="logout" v-if="isLoggedIn"><i class="fa-solid fa-right-from-bracket mx-3 fs-3 "></i></router-link>
+          <router-link class="nav-link  fs-3" aria-current="page"  @click="logout" v-if="isLoggedIn"><i class="fa-solid fa-right-from-bracket mx-3 fs-3 "></i></router-link>
         </li>
       </ul>
     </div>
