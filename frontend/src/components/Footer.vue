@@ -27,8 +27,8 @@
             <div class="col-lg-4 col-md-6">
               <h4 class="section-title ff-secondary text-center text-md-start fw-normal mb-4">Newsletter</h4>
               <p class="text-center text-md-start">Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-              <div class="position-relative mx-auto mx-md-0">
-                <button type="button" class="btn py-2 position-absolute my-3">Sign Up</button>
+              <div class=" mx-auto mx-md-0">
+                <button type="button" class="btn py-2  my-3">Sign Up</button>
               </div>
             </div>
           </div>
@@ -70,4 +70,5 @@ button:hover{
     background-color: #dddfec;
     color: black;
 }
+
 </style>

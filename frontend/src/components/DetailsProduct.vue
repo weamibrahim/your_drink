@@ -12,7 +12,7 @@
           <div className="d-flex justify-content-center mt-1 ">
 
 
-            <button class="btn btn-primary p-2 border-0  "  ><router-link class=" text-decoration-none text-white" to="/cart" @click="addToCart"> add to cart</router-link></button>
+            <button class="btn btn-primary p-2 border-0  "  @click="addToCart" >add to cart</button>
           </div>
         
         </div>
@@ -90,10 +90,12 @@ const user_id = JSON.parse(localStorage.getItem('userData'))._id
           },
       })
         .then((res) => {
-          // Handle a successful response, e.g., show a success message
-          //alert("Item added to cart successfully!");
+         if(user_id){
           router.push('/cart');
-          console.log(res.data);
+          console.log(res.data);}
+          else{
+            router.push('/login');
+          }
         })
         .catch((err) => {
           // Handle errors, e.g., display an error message
