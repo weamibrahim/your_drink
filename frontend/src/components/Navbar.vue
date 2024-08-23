@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <i class="fa-solid fa-wine-glass-empty mx-3 fs-3  text-secondary"></i>
-    <a class="navbar-brand fs-3">Drinks</a>
+    <div class="navbar-brand fs-3"> <router-link class="nav-link  fs-3" aria-current="page" to="/home">Drinks</router-link></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,9 +11,7 @@
         <li class="nav-item"  >
           <router-link class="nav-link fs-3" aria-current="page" to="/dashboard" v-if="userRole=='admin'&&isLoggedIn"><i class="fa-solid fa-table-columns mx-3 fs-3"></i>Dashboard</router-link>
         </li>
-        <li class="nav-item">
-          <router-link class="nav-link  fs-3" aria-current="page" to="/home"><i class="fa-solid fa-house mx-3 fs-3 "></i>Home</router-link>
-        </li>
+        
         <li class="nav-item">
           <router-link class="nav-link  fs-3" aria-current="page" to="/profile" v-if="isLoggedIn"><i class="fa-solid fa-user mx-3 fs-3 " ></i>Profile</router-link>
         </li>
@@ -26,14 +24,14 @@
           </router-link>
         </li>
        
-        <li class="nav-item" v-if="!isLoggedIn">
-          <router-link class="nav-link  fs-3" aria-current="page" to="/login">Login</router-link>
+        <li class="nav-item " v-if="!isLoggedIn">
+          <router-link class="nav-link   fs-3  custom-nav-link" aria-current="page" to="/login" >Login</router-link>
         </li>
         <li class="nav-item" v-if="!isLoggedIn">
-          <router-link class="nav-link  fs-3" aria-current="page" to="/signup">Signup</router-link>
+          <router-link class="nav-link   fs-3  custom-nav-link" aria-current="page" to="/signup">Signup</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link  fs-3" aria-current="page"  @click="logout"  to="/login" v-if="isLoggedIn"><i class="fa-solid fa-right-from-bracket mx-3 fs-3 "></i></router-link>
+          <router-link class="nav-link   fs-3" aria-current="page"  @click="logout"  to="/login" v-if="isLoggedIn"><i class="fa-solid fa-right-from-bracket mx-3 fs-3 "></i></router-link>
         </li>
       </ul>
     </div>
@@ -90,5 +88,12 @@ nav {
 
 .navbar-nav {
   margin-left: auto !important;
+}
+@media  (max-width: 990px) {
+  .custom-nav-link {
+  margin-left: 3rem !important;
+  
+}
+
 }
 </style>
