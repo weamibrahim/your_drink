@@ -25,7 +25,7 @@
         <h5 class="card-title text-center">{{product.name}}</h5>
         <p class="card-text text-center">{{product.price}}</p>
          <div class="d-flex justify-content-center">
-          <button  class="btn btn-outline-secondary">  <router-link class="text-decoration-none text-secondary " :to="`product/${product._id}`"> show 
+          <button  class="btn btn-outline-secondary">  <router-link class="text-decoration-none text-secondary  " :to="`product/${product._id}`"> show 
     </router-link></button>
          </div>
       </div>

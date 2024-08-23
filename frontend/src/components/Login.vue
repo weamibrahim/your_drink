@@ -12,7 +12,7 @@
           <label for="password">Password</label>
         </div>
         <div class="input-block">
-          <span class="forgot"><a href="#">Forgot Password?</a></span>
+          
           <button @click.prevent="login">Submit</button>
         </div>
          <p class="mx-5">if you dont  have an account? <router-link to="/signup">Sign up</router-link></p>
