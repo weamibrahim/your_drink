@@ -12,7 +12,7 @@
           <div className="d-flex justify-content-center mt-1 ">
 
 
-            <button class="btn btn-primary p-2 border-0  "   @click="addToCart"> add to cart</button>
+            <button class="btn btn-primary p-2 border-0  "  ><router-link class=" text-decoration-none text-white" to="/cart" @click="addToCart"> add to cart</router-link></button>
           </div>
         
         </div>
@@ -76,8 +76,8 @@ export default {
  const addToCart = () => {
       const productId = route.params.id;
 const user_id = JSON.parse(localStorage.getItem('userData'))._id
-if ( !user_id) {
-  
+if (!user_id) {
+    // Redirect to login if not logged in
     router.push('/login');
     return;
   }
