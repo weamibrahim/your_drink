@@ -148,7 +148,7 @@ export default {
 .message, 
 .signin {
   font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
 }
 
 .signin {

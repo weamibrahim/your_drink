@@ -16,7 +16,7 @@
           <button @click.prevent="login">Submit</button>
         </div>
          <p class="mx-5">if you dont  have an account? <router-link to="/signup">Sign up</router-link></p>
-         <p v-if="errorMessage">{{errorMessage}}</p>
+         <p v-if="errorMessage" class="mx-5">{{errorMessage}}</p>
       </form>
     </div>
     <div class="right">
