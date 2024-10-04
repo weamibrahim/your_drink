@@ -32,9 +32,9 @@
           <td>{{ product.price }}</td>
           <td>{{ product.category }}</td>
           
-          <td><button class="btn btn-danger" @click="deleteproduct(product._id)">Delete</button></td>
+          <td><button class="btn btn-danger" @click="deleteproduct(product._id)"><i class="fa-solid fa-trash"></i></button></td>
           <!-- <td><button class="btn btn-info"> <router-link class="btn" :to="`/products/${product.id}`">show </router-link></button></td> -->
-          <td><button class="btn btn-primary"><router-link      class="btn"             :to="`updateproduct/${product._id}`">update</router-link></button></td>
+          <td><button class="btn btn-primary"><router-link      class="text-decoration-none text-white"           :to="`updateproduct/${product._id}`"><i class="fa-regular fa-pen-to-square"></i></router-link></button></td>
           
         </tr>
       </tbody>

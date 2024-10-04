@@ -1,5 +1,5 @@
 <template>
-   <div class="d-flex justify-content-between">
+   <div class="d-flex justify-content-between ">
     <SidebarApp />
     <div class="container-fluid bg  ">
    
@@ -29,9 +29,9 @@
           <td>{{ user.email }}</td>
           <td>{{ user.address}}</td>
 
-          <td><button class="btn btn-danger" @click="deleteUser(user._id)">Delete</button></td>
-          <td><button class="btn btn-info"> <router-link class="btn" :to="`users/${user._id}`">show </router-link></button></td>
-          <td><button class="btn btn-primary"><router-link      class="btn"             :to="`update/${user._id}`">update</router-link></button></td>
+          <td><button class="btn btn-danger" @click="deleteUser(user._id)"><i class="fa-solid fa-trash"></i></button></td>
+          <td><button class="btn btn-info"> <router-link class="text-decoration-none text-white" :to="`users/${user._id}`"><i class="fa-regular fa-eye"></i></router-link></button></td>
+          <td><button class="btn btn-primary"><router-link class="text-decoration-none text-white" :to="`update/${user._id}`"><i class="fa-regular fa-pen-to-square"></i></router-link></button></td>
           
         </tr>
       </tbody>
