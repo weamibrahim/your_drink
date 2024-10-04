@@ -101,7 +101,11 @@ const router = useRouter();
           localStorage.setItem('userData', JSON.stringify(data.user));
           localStorage.setItem('accessToken', data.accessToken);
           console.log('Authentication successful');
-          router.push('/home');
+         if(data.user.role === "admin"){
+          router.push('/dashboard')}
+          else{
+            router.push('/home')
+          }
           isLoggedIn.value = true;
 
           // Redirect to another page or perform other actions upon successful login
