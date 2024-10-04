@@ -5,7 +5,7 @@
       <form class="form">
         <div class="input-block">
           <input class="input" type="text" v-model="email" required>
-          <label for="email">Username</label>
+          <label for="email">Useremail</label>
         </div>
         <div class="input-block">
           <input class="input" type="password" v-model="password" required>
