@@ -14,8 +14,8 @@
             </div>
             <div class="col-lg-4 col-md-6">
               <h4 class="section-title ff-secondary text-center text-md-start fw-normal mb-4">Contact</h4>
-              <p class="mb-2"><i class="fa fa-map-marker-alt mx-2"></i>Our Location: 1 Mahmoud Salamah Al Attarin, Alexandria</p>
-              <p class="mb-2"><i class="fa fa-phone-alt mx-2"></i>+012 345 67890</p>
+              <p class="mb-2"><i class="fa fa-map-marker-alt mx-2"></i>Alexandria</p>
+              <p class="mb-2"><i class="fa fa-phone-alt mx-2"></i>13456789</p>
               <p class="mb-2"><i class="fa fa-envelope mx-2"></i>info@example.com</p>
               <div class="d-flex justify-content-center justify-content-md-start pt-2">
                 <a class="btn btn-outline-light btn-social mx-2" href="#"><i class="fab fa-twitter"></i></a>
